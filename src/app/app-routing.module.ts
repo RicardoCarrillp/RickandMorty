@@ -1,24 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DetailCharacterComponent } from './components/pages/characters/detail-character/detail-character.component';
+import { EpisodesCharactersInfoComponent } from './components/pages/characters/episodes-characters-info/episodes-characters-info.component';
+import { HomeComponent } from './components/pages/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo:'/home',
+    redirectTo:'home',
     pathMatch:'full'
   },
   {
-    path: 'home',
-    loadChildren: () =>import('./components/pages/home/home.module').then((m) =>m.HomeModule),
+    path: 'home',component: HomeComponent,
   },
+
   {
-    path: 'characters',
-    loadChildren: () =>import('./components/pages/characters/listCharacters/list-characters.module').then((m) =>m.ListCharactersModule),
-  },
-  {
-    path: 'characterList',
-    loadChildren: () =>import('./components/pages/characters/detail-character/detail-character.module').then((m) =>m.DetailCharacterModule),
-  }
+    path: 'character-detail/:id',component: DetailCharacterComponent  },
+     {
+    path: 'episode-detail/:id',component: EpisodesCharactersInfoComponent  }
 
 
 
