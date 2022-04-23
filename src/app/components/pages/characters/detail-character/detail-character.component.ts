@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute,Params, Router } from '@angular/router';
+import { Observable, take } from 'rxjs';
+import {Location } from '@angular/common';
+import { Character } from 'src/interfaces/character.interface';
+import { GlobalService } from 'src/services/global-service.service';
 
 @Component({
   selector: 'app-detail-character',
@@ -6,10 +11,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail-character.component.scss']
 })
 export class DetailCharacterComponent implements OnInit {
-
-  constructor() { }
+  character$: Observable<Character>;
+  constructor(private Activerouter:ActivatedRoute,private CharacterService:GlobalService,private location:Location) { }
 
   ngOnInit(): void {
-  }
+    this.Activerouter.params.pipe(
+      take(1)
+    ).subscribe(params =>{ 
+      const id=params['id'];
+      this.character$=this.CharacterService.getDetailCharacter(id);
+      console.log(this.character$);
+      
+    
+    }
+      );
 
+
+}
+
+   goBack(): void{
+    this.location.back();
+
+  }
 }
