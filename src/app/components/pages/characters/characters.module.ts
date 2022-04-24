@@ -5,6 +5,7 @@ import { DetailCharacterComponent } from './detail-character/detail-character.co
 import { EpisodesCharactersInfoComponent } from './episodes-characters-info/episodes-characters-info.component';
 import { CharactersComponent } from './listCharacters/characters.component';
 import { RouterModule } from '@angular/router';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
@@ -12,11 +13,13 @@ import { RouterModule } from '@angular/router';
   
     DetailCharacterComponent,
     EpisodesCharactersInfoComponent,
-    CharactersComponent
+    CharactersComponent,
+    
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    InfiniteScrollModule
     
   ],
   exports: [

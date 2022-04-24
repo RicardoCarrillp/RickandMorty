@@ -11,7 +11,7 @@ export class GlobalService {
   constructor(private http: HttpClient) { }
 
   getCharacters(page=1	) {
-    return this.http.get<Character[]>(`${environment.UrlApi}character?page${page}`)
+    return this.http.get<Character[]>(`${environment.UrlApi}character?page=${page}`)
 
 
   }

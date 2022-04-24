@@ -20,7 +20,6 @@ export class DetailCharacterComponent implements OnInit {
     ).subscribe(params =>{ 
       const id=params['id'];
       this.character$=this.CharacterService.getDetailCharacter(id);
-      console.log(this.character$);
       
     
     }
