@@ -1,10 +1,27 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "dist/rickandmorty_app",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "redirects": [ {
+      "source": "/home",
+      "destination": "/",
+      "type": 301
+    },
+    {
+      "source": "/character-detail",
+      "destination": "/",
+      "type": 301
+    },
+    {
+      "source": "/episode-detail",
+      "destination": "/",
+      "type": 301
+    }
+  
+  ]
   }
 }

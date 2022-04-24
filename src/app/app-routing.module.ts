@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DetailCharacterComponent } from './components/pages/characters/detail-character/detail-character.component';
-import { EpisodesCharactersInfoComponent } from './components/pages/characters/episodes-characters-info/episodes-characters-info.component';
-import { HomeComponent } from './components/pages/home/home.component';
+
 
 const routes: Routes = [
   {
@@ -11,13 +9,14 @@ const routes: Routes = [
     pathMatch:'full'
   },
   {
-    path: 'home',component: HomeComponent,
-  },
+    path: 'home', loadChildren: () => import('./components/pages/home/home.module').then(m => m.HomeModule)},
 
   {
-    path: 'character-detail',component: DetailCharacterComponent  },
+    path: 'character-detail',
+    loadChildren: () => import('./components/pages/characters/detail-character/detail-character.module').then(m => m.DetailCharacterModule)},
      {
-    path: 'episode-detail',component: EpisodesCharactersInfoComponent  }
+    path: 'episode-detail',
+    loadChildren: () => import('./components/pages/characters/episodes-characters-info/episodes-characters-info.module').then(m => m.EpisodesCharactersInfoModule) }
 
 
 
