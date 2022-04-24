@@ -14,14 +14,17 @@
       
             <div class="header">
              
-                    <h1>   <button (click)="goBack()" class="btn btn-dark justify-content-center">Volver</button>
-                        <br/>{{ character.name | slice: 0:15}} </h1>
-                    <h5 *ngIf="character.status==='alive'">Estado : Vivo</h5> 
-                    <h5 *ngIf="character.status==='unknown'">Estado : Desconocido</h5>
-                    <h5 *ngIf="character.status==='dead '">Estado : Muerto</h5>
-                    <h5>Especie : {{character.species}}</h5>
-                    <h5>Genero : {{character.gender}}</h5>
-                    <h5>Ubicación : {{character.location.name}}</h5>
+                    <h1>   <button (click)="goBack()" class="btn btn-outline-dark justify-content-center">Volver</button>
+                        <br/>{{ character.name }} </h1>
+                    <h5 *ngIf="character.status==='Alive'">Estado: 🟢Vivo</h5> 
+                    <h5 *ngIf="character.status==='unknown'">Estado: ⚫Desconocido</h5>
+                    <h5 *ngIf="character.status==='Dead'">Estado: 🔴Muerto</h5>
+                    <h5>Especie: {{character.species}}</h5>
+                    <h5 *ngIf="character.gender==='Female'">Genero: Femenino</h5>
+                    <h5 *ngIf="character.gender==='Male'">Genero: Masculino</h5>
+                    <h5 *ngIf="character.gender==='Genderless'">Genero: Sin genero</h5>
+                    <h5 *ngIf="character.gender==='unknown'">Genero: Desconocido</h5>
+                    <h5>Ubicación: {{character.location.name}}</h5>
                   
             
               
