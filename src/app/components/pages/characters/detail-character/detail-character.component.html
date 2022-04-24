@@ -2,13 +2,13 @@
 
 <div class="container" *ngIf="character$ | async as character ">
     <div class="row ">
-        
-      <div class="col-xs-12 col-sm-6 col-md-6"> 
+      <div class="col">
+      <div class="col-xs-12 col-sm-12 col-md-9"> 
    
               
-            <img [src]="[character.image]" [alt]="[character.name]" class="img-fluid" />
+            <img [src]="[character.image]" [alt]="[character.name]" class="card-img-top" />
            
-
+</div>
     </div>      
       <div class="col">
       
@@ -16,20 +16,28 @@
              
                     <h1>   <button (click)="goBack()" class="btn btn-dark justify-content-center">Volver</button>
                         <br/>{{ character.name | slice: 0:15}} </h1>
-                    <h5>Estado : {{character.status}}</h5>
+                    <h5 *ngIf="character.status==='alive'">Estado : Vivo</h5> 
+                    <h5 *ngIf="character.status==='unknown'">Estado : Desconocido</h5>
+                    <h5 *ngIf="character.status==='dead '">Estado : Muerto</h5>
                     <h5>Especie : {{character.species}}</h5>
                     <h5>Genero : {{character.gender}}</h5>
                     <h5>Ubicación : {{character.location.name}}</h5>
-                    <h5>Episodios : </h5>
-          
-                    <ul *ngFor="let episode of character.episode ">
-                        <li><a [routerLink]="['/episode-detail', episode.substring(40)]">Episodio {{episode.substring(40)}}</a></li>
-                       
-                      </ul>
+                  
+            
+              
              
             </div>
         </div>
       </div>
-    
-    
+        <div class="row">
+         
+          <div class="col-xs- col-sm-4 col-md-3" *ngFor="let episode of character.episode">
+            <div class="card" >
+
+              <div class="card-body" tag="a" (click)="DetailsEpisode(episode.substring(40))">
+                <h5 (click)="DetailsEpisode(episode.substring(40))">Episodio {{episode.substring(40)}}</h5>                      </div>
+            </div>
+          </div>
+         
+    </div>
   </div>

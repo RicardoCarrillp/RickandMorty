@@ -18,3 +18,12 @@ export interface Location {
     name:string;
 }
 
+export interface Episode {
+    id: number;
+    name?:string;
+    air_date?:string;
+    episode?:string;
+
+    
+}
+

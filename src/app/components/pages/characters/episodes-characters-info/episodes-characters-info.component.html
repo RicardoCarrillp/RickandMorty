@@ -1,1 +1,40 @@
-<p>episodes-characters-info works!</p>
+
+
+
+    <div class="row mt-1" *ngIf="episode$ | async as episode ">
+        
+      <div class="col-xs-6 col-sm-6 col-md-7"> 
+   
+              
+            <img *ngIf="episode.episode.substring(2,3)==='1'" src="https://fantasyvideostore.com/wp-content/uploads/2021/06/DVD2528.jpg" 
+            alt="" width="100%" height="550vh" class="card-img-top" />
+            <img *ngIf="episode.episode.substring(2,3)==='2'" src="https://cdn.shopify.com/s/files/1/0024/9803/5810/products/955830-Product-0-I_2281f1e7-8022-4178-9b01-22d1727d367f_800x800.jpg?v=1572266827" 
+            alt="" width="100%" height="570vh" class="card-img-top" />
+            <img *ngIf="episode.episode.substring(2,3)==='3'" src="https://m.media-amazon.com/images/I/81x3OE4FpuL._SL1500_.jpg" 
+            alt="" width="100%" height="540vh" class="card-img-top" />
+            <img *ngIf="episode.episode.substring(2,3)==='4'" src="https://m.media-amazon.com/images/I/814WlMSZu7L._SL1500_.jpg" 
+            alt="" width="100%" height="550vh" class="card-img-top" />
+            <img *ngIf="episode.episode.substring(2,3)==='5'" src="https://target.scene7.com/is/image/Target/GUEST_3e5c1357-93f2-48ff-b403-9539d4363dcb?wid=488&hei=488&fmt=pjpeg" 
+            alt="" width="100%" height="490vh" class="card-img-top" />
+           
+
+    </div>      
+      <div class="col">
+      
+            <div class="header">
+                <br/>
+                    <h2 >   <button (click)="goBack()" class="btn btn-dark justify-content-center">Volver</button>
+                        <br/><br/>Nombre del episodio:<br/> <strong>{{ episode.name | slice: 0:15}}</strong> </h2>  <br/>
+                    <h5>Fecha de emisión: {{episode.air_date}}</h5>
+                    <br/>
+                    <h5>Temporada: {{ episode.episode.substring(2,3)}}</h5>
+                    <br/>
+                    <h5 *ngIf="episode.episode.substring(4,5)==='0'">Episodio: {{ episode.episode.substring(5,6)}}</h5>
+                    <h5 *ngIf="episode.episode.substring(4,5)!=='0'">Episodio: {{ episode.episode.substring(4,6)}}</h5>
+                 
+                 
+             
+            </div>
+        </div>
+      </div>
+    

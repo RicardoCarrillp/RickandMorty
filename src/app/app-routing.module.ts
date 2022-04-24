@@ -15,9 +15,9 @@ const routes: Routes = [
   },
 
   {
-    path: 'character-detail/:id',component: DetailCharacterComponent  },
+    path: 'character-detail',component: DetailCharacterComponent  },
      {
-    path: 'episode-detail/:id',component: EpisodesCharactersInfoComponent  }
+    path: 'episode-detail',component: EpisodesCharactersInfoComponent  }
 
 
 

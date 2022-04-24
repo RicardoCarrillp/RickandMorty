@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { take } from 'rxjs';
-import { Character, RequestInfo } from 'src/interfaces/character.interface';
+import { Character, RequestInfo } from 'src/interfaces/interfaces';
 import { GlobalService } from 'src/services/global-service.service';
 import { DOCUMENT } from '@angular/common'
 import { Inject } from '@angular/core';
@@ -93,6 +93,11 @@ export class CharactersComponent implements OnInit {
 
 
 
+  }
+
+  public DetailsCharacter(id: number): void {
+    this.characterService.IDCharacter = id;
+    this.route.navigate(['/character-detail'], { relativeTo: this.activatedroute });
   }
 
 
