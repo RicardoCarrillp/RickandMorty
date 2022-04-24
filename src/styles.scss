@@ -4,7 +4,7 @@ html{
 }
 
 .container{
-    padding: 7vh;
+    padding: 4vh;
 }
 
 .card-inner {
@@ -67,5 +67,21 @@ html{
 
         }
     }
-
+    .btn-default {
+        font-family: Raleway-SemiBold;
+        font-size: 13px;
+        color: rgba(108, 88, 179, 0.75);
+        letter-spacing: 1px;
+        line-height: 15px;
+        border: 2px solid rgba(108, 89, 179, 0.75);
+        border-radius: 40px;
+        background: transparent;
+        transition: all 0.3s ease 0s;
+      }
+      
+      .btn-default:hover {
+        color: #FFF;
+        background: rgba(108, 88, 179, 0.75);
+        border: 2px solid rgba(108, 89, 179, 0.75);
+      }
 @import "../node_modules/bootstrap/scss/bootstrap";
