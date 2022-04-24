@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Character } from 'src/interfaces/character.interface';
+import { Character, Episode } from 'src/interfaces/interfaces';
 @Injectable({
   providedIn: 'root'
 })
 export class GlobalService {
 
+  IDCharacter:number;
+  IDEpisode:string;
 
   constructor(private http: HttpClient) { }
 
@@ -22,8 +24,8 @@ export class GlobalService {
 
   }
 
-  getDetailEpisode(id: number) {
-    return this.http.get<Character[]>(`${environment.UrlApi}episode/${id}`)
+  getDetailEpisode(id: string) {
+    return this.http.get<Episode>(`${environment.UrlApi}episode/${id}`)
 
   }
 }

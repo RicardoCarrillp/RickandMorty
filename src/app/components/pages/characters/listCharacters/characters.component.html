@@ -1,8 +1,8 @@
 <div class="row" infinite-scroll (scrolled)="onScroll()">
-  <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let character of characters">
+  <div class="col-xs-12 col-sm-6 col-md-3" *ngFor="let character of characters">
     <div class="card">
       <div class="img">
-        <a [routerLink]="['/character-detail', character.id]">
+        <a (click)="DetailsCharacter(character.id)">
           <img
             [src]="[character.image]"
             [alt]="[character.name]"
@@ -12,9 +12,9 @@
       </div>
       <div class="card-inner">
         <div class="header">
-          <a [routerLink]="['/character-detail', character.id]">
-            <h4>{{ character.name | slice: 0.15 }}</h4>
-          </a>
+          
+            <h4 tag="a" (click)="DetailsCharacter(character.id)">{{ character.name | slice: 0.15 }}</h4>
+         
         </div>
       </div>
     </div>
