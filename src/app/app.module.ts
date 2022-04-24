@@ -5,7 +5,6 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { CharactersModule } from './components/pages/characters/characters.module';
 import { DetailCharacterModule } from './components/pages/characters/detail-character/detail-character.module';
 import { HomeModule } from './components/pages/home/home.module';
 import { ListCharactersModule } from './components/pages/characters/listCharacters/list-characters.module';
@@ -22,7 +21,6 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    CharactersModule,
     HttpClientModule,
     ListCharactersModule,
     EpisodesCharactersInfoModule,

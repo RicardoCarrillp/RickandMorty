@@ -5,14 +5,12 @@
 export const environment = {
   UrlApi:'https://rickandmortyapi.com/api/',
   firebaseConfig : {
-    apiKey: "AIzaSyCuWtHOgCReRgb-Dl3jlXjbb5uurjoDUJo",
-    authDomain: "ejemplo-aab49.firebaseapp.com",
-    databaseURL: "https://ejemplo-aab49.firebaseio.com",
-    projectId: "ejemplo-aab49",
-    storageBucket: "ejemplo-aab49.appspot.com",
-    messagingSenderId: "599420831992",
-    appId: "1:599420831992:web:55ade9f95150beb3ca130d",
-    measurementId: "G-WKWTJ1DSZ9"
+    apiKey: "AIzaSyC-lywpEHlTgZYKd3u3XZO1xBKT63LtvoU",
+    authDomain: "rickandmortyapp-c93e8.firebaseapp.com",
+    projectId: "rickandmortyapp-c93e8",
+    storageBucket: "rickandmortyapp-c93e8.appspot.com",
+    messagingSenderId: "779806142602",
+    appId: "1:779806142602:web:0b4e7e7a69dcc6ee7c3d73"
   },
   production: false
 };
