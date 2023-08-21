@@ -19,16 +19,14 @@ export class DetailCharacterComponent implements OnInit {
 
   ngOnInit(): void {
    
-    this.Activerouter.params.pipe(
-      take(1)
-    ).subscribe(() =>{ 
+  
       const id=this.CharacterService.IDCharacter;
       // console.log(id);
       
       
    
       
-      if (id===undefined) {
+      if (id===undefined || id===null) {
         this.goBack()
         
 
@@ -39,10 +37,7 @@ export class DetailCharacterComponent implements OnInit {
       
     
     }
-      );
 
-
-}
 
    goBack(): void{
     this.router.navigateByUrl('/home');

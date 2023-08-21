@@ -20,9 +20,6 @@ export class EpisodesCharactersInfoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.Activerouter.params.pipe(
-      take(1)
-    ).subscribe(() =>{ 
       const id=this.CharacterService.IDEpisode;
       // console.log(id);
       
@@ -41,10 +38,6 @@ export class EpisodesCharactersInfoComponent implements OnInit {
     
     }
 
-      );
-
-
-}
 
    goBack(): void{
     this.location.back();
